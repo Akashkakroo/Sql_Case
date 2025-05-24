@@ -1,0 +1,14 @@
+SELECT *,
+CASE
+WHEN department = "HR" THEN (3/100)*salary
+WHEN department = "IT" THEN (10/100)*salary
+ELSE (5/100)*salary
+END AS bonus,
+CASE 
+WHEN department = "HR" THEN (3/100)*salary + salary
+WHEN department = "IT" THEN (10/100)*salary + salary
+ELSE (5/100)*salary + salary
+END AS salary_after_bonus
+FROM
+employees AS e JOIN Attendance AS a
+ON e.emp_id = a.emp_id;
