@@ -1,0 +1,7 @@
+SELECT e.name, e.salary, a.days_present,
+CASE
+WHEN e.salary > 70000 AND a.days_present < 18 THEN "Warning"
+END AS warning
+FROM
+employees AS e JOIN Attendance AS a
+ON e.emp_id = a.emp_id
