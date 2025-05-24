@@ -1,0 +1,8 @@
+SELECT name, experience_years, 
+CASE
+WHEN experience_years <=3 THEN "Junior"
+WHEN experience_years BETWEEN 4 AND 6 THEN "Mid-Level"
+ELSE "Senior"
+END AS experience_level
+FROM
+employees;
