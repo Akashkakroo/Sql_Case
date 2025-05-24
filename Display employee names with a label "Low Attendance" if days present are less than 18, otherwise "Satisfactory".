@@ -1,0 +1,7 @@
+SELECT e.name, a.days_present,
+CASE
+WHEN days_present < 18 THEN "Low Attendance"
+ELSE "Satisfactory"
+END AS remarks
+FROM Attendance a JOIN employees e
+ON a.emp_id = e.emp_id;
