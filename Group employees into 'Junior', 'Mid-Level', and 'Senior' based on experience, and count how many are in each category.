@@ -1,0 +1,13 @@
+SELECT 
+CASE 
+WHEN experience_years < 2 THEN "Junior"
+WHEN experience_years BETWEEN 3 AND 6 THEN "Mid-Level"
+ELSE "Senior"
+END AS category, COUNT(*) AS total_employees
+FROM employees
+GROUP BY
+CASE 
+WHEN experience_years < 2 THEN "Junior"
+WHEN experience_years BETWEEN 3 AND 6 THEN "Mid-Level"
+ELSE "Senior"
+END;
