@@ -1,0 +1,7 @@
+SELECT name, salary,
+CASE
+WHEN salary < 60000 THEN "Underpaid"
+WHEN salary BETWEEN 600000 AND 79999 THEN "Average"
+ELSE "High Paid"
+END AS remarks
+FROM employees;
